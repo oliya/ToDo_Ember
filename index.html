@@ -34,34 +34,27 @@
       <section id="main">
         {{outlet}}
 
-         {{view Ember.Checkbox id="toggle-all" checkedBinding="allAreDone"}}
+        <input type="checkbox" id="toggle-all">
       </section>
 
       <footer id="footer">
         <span id="todo-count">
-        <strong>{{remaining}}</strong> {{inflection}} left</span>
-
+          <strong>{{remaining}}</strong> {{inflection}} left</span>
         <ul id="filters">
           <li>
-  {{#linkTo 'todos.index' activeClass="selected"}}All{{/linkTo}}
+            <a href="all" class="selected">All</a>
           </li>
           <li>
   {{#linkTo 'todos.active' activeClass="selected"}}Active{{/linkTo}}
           </li>
           <li>
-  {{#linkTo 'todos.completed' activeClass="selected"}}Completed{{/linkTo}}
+            <a href="completed">Completed</a>
           </li>
         </ul>
 
-     
-
-{{#if hasCompleted}}
-  <button id="clear-completed" {{action "clearCompleted"}}>
-    Clear completed ({{completed}})
-  </button>
-{{/if}}
-
-
+        <button id="clear-completed">
+          Clear completed (1)
+        </button>
       </footer>
   </section>
 
