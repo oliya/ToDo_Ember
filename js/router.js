@@ -1,13 +1,15 @@
-
 Todos.Router.map(function () {
   this.resource('todos', { path: '/' }, function () {
-    // additional child routes
-
-        this.route('active');
-        this.route('completed');
-
-
+    // additional child routes    
+    this.route('active');
+    this.route('completed');
   });
+});
+
+Todos.TodosRoute = Ember.Route.extend({
+  model: function () {
+    return Todos.Todo.find();
+  }
 });
 
 Todos.TodosIndexRoute = Ember.Route.extend({
@@ -15,8 +17,6 @@ Todos.TodosIndexRoute = Ember.Route.extend({
     return Todos.Todo.find();
   }
 });
-
-
 
 Todos.TodosActiveRoute = Ember.Route.extend({
   model: function(){
@@ -28,7 +28,6 @@ Todos.TodosActiveRoute = Ember.Route.extend({
     this.render('todos/index', {controller: controller});
   }
 });
-
 
 Todos.TodosCompletedRoute = Ember.Route.extend({
   model: function(){
