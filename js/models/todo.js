@@ -13,7 +13,7 @@ Todos.Todo.FIXTURES = [
  },
  {
    id: 2,
-   title: 'Life is beautiful! ',
+   title: 'Jaap is beautiful! ',
    isCompleted: false
  },
  {
