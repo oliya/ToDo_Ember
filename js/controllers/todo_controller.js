@@ -11,6 +11,12 @@ removeTodo: function () {
   todo.deleteRecord();
   todo.save();
 },
+
+acceptChanges: function () {
+  this.set('isEditing', false);
+  this.get('model').save();
+},
+
   isCompleted: function(key, value){
     var model = this.get('model');
 
