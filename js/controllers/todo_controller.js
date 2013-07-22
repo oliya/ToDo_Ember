@@ -6,7 +6,11 @@ editTodo: function () {
   this.set('isEditing', true);
 },
 
-
+removeTodo: function () {
+  var todo = this.get('model');
+  todo.deleteRecord();
+  todo.save();
+},
   isCompleted: function(key, value){
     var model = this.get('model');
 
